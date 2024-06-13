@@ -1,4 +1,4 @@
 comptime {
-    @compileError("abc");
+    // @compileError("abc");
     if (1 == 1) {}
 }

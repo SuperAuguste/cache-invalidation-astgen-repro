@@ -1,5 +1,10 @@
 const std = @import("std");
 
 pub fn build(b: *std.Build) !void {
-    _ = b.addModule("dependency", .{ .root_source_file = b.path("dependency.zig") });
+    const exe = b.addExecutable(.{
+        .name = "main",
+        .root_source_file = b.path("main.zig"),
+        .target = b.standardTargetOptions(.{}),
+    });
+    b.installArtifact(exe);
 }
